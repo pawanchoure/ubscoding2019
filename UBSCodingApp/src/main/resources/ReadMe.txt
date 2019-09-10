@@ -10,4 +10,3 @@ Step 5: Build the AggregatedRecord Object based on Client Code and its associate
 
 Note:
 1) Instead of doing actual publishing I am just printing the hashmap for testing purpose and also not removing elements after publishing to make result simple to validate
-2)
