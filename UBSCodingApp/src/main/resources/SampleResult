@@ -1,0 +1,33 @@
+Sample Input:
+
+TradeBook{tradeId=1, tradeDate=2019-11-10, clientCode='UBS', stockCode='APPL', price=102.13, buySell=BUY, quantity=100}
+TradeBook{tradeId=2, tradeDate=2019-11-10, clientCode='UBS', stockCode='IBM', price=150.00, buySell=BUY, quantity=150}
+TradeBook{tradeId=3, tradeDate=2019-11-10, clientCode='UBS', stockCode='MST', price=160.00, buySell=BUY, quantity=200}
+TradeBook{tradeId=4, tradeDate=2019-11-10, clientCode='UBS', stockCode='GOOG', price=180.00, buySell=BUY, quantity=250}
+TradeBook{tradeId=5, tradeDate=2019-11-10, clientCode='UBS', stockCode='AMZ', price=200.00, buySell=BUY, quantity=100}
+TradeBook{tradeId=6, tradeDate=2019-11-10, clientCode='BARC', stockCode='APPL', price=103.00, buySell=SELL, quantity=200}
+TradeBook{tradeId=7, tradeDate=2019-11-10, clientCode='BARC', stockCode='IBM', price=152.00, buySell=SELL, quantity=250}
+TradeBook{tradeId=8, tradeDate=2019-11-10, clientCode='BARC', stockCode='MST', price=165.00, buySell=SELL, quantity=300}
+TradeBook{tradeId=9, tradeDate=2019-11-10, clientCode='BARC', stockCode='GOOG', price=182.00, buySell=SELL, quantity=350}
+TradeBook{tradeId=10, tradeDate=2019-11-10, clientCode='BARC', stockCode='GOOG', price=181.00, buySell=BUY, quantity=250}
+
+
+Sample Output:
+
+UBS=AggregatedRecord{
+clientCode='UBS',
+recordList=[
+Record{stockCode='APPL', buySell=BUY, notional=10213.00, executedQuantity=100},
+Record{stockCode='IBM', buySell=BUY, notional=22500.00, executedQuantity=150},
+Record{stockCode='MST', buySell=BUY, notional=32000.00, executedQuantity=200},
+Record{stockCode='GOOG', buySell=BUY, notional=45000.00, executedQuantity=250},
+Record{stockCode='AMZ', buySell=BUY, notional=20000.00, executedQuantity=100}]},
+
+BARC=AggregatedRecord{
+clientCode='BARC',
+recordList=[
+Record{stockCode='APPL', buySell=SELL, notional=20600.00, executedQuantity=200},
+Record{stockCode='IBM', buySell=SELL, notional=38000.00, executedQuantity=250},
+Record{stockCode='MST', buySell=SELL, notional=49500.00, executedQuantity=300},
+Record{stockCode='GOOG', buySell=SELL, notional=63700.00, executedQuantity=350},
+Record{stockCode='GOOG', buySell=BUY, notional=45250.00, executedQuantity=250}]}
